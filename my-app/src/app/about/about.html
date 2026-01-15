@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Tên Của Bạn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        /* --- CV CONTAINER (A4 SIZE) --- */
+        .cv-container {
+            width: 100%;
+            max-width: 210mm; /* A4 width */
+            background-color: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 32% 68%; /* Chia cột: Trái 32%, Phải 68% */
+            position: relative;
+            overflow: hidden; /* Để cắt phần SVG thừa */
+        }
+
+        /* --- DECORATION SVGs --- */
+        .decor-top-left {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 200px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .decor-bottom-right {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 250px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* --- LEFT COLUMN STYLES --- */
+        .left-col {
+            background-color: #3d405b; /* Màu tối sang trọng */
+            color: #fff;
+            padding: 40px 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+
+        .profile-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            background-color: #ddd;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .left-col h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+            color: #f4f1ea;
+        }
+
+        /* Contact Items */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .icon-circle {
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .icon-circle i {
+            font-size: 14px;
+            color: #e07a5f; /* Màu cam đất nổi bật */
+        }
+
+        /* Skills */
+        .skill-row {
+            margin-bottom: 15px;
+        }
+        
+        .skill-row span {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .stars {
+            color: #f2cc8f; /* Màu vàng */
+            font-size: 12px;
+        }
+
+        .note {
+            font-size: 12px;
+            font-style: italic;
+            opacity: 0.7;
+            margin-top: 15px;
+        }
+
+        /* Interests */
+        .hobby-list {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .hobby-list li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hobby-list li::before {
+            content: "•";
+            color: #e07a5f;
+            margin-right: 10px;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        /* --- RIGHT COLUMN STYLES --- */
+        .right-col {
+            padding: 60px 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-name {
+            margin-bottom: 40px;
+        }
+
+        .header-name h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #3d405b;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .job-target {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            letter-spacing: 4px;
+            color: #e07a5f;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .summary-text {
+            margin-bottom: 40px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .main-section {
+            margin-bottom: 40px;
+        }
+
+        .main-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #3d405b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-section h2::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background-color: #eee;
+            margin-left: 20px;
+        }
+
+        /* Timeline Blocks */
+        .timeline-block {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .time {
+            font-size: 13px;
+            font-weight: 700;
+            color: #e07a5f;
+            margin-bottom: 5px;
+            display: inline-block;
+            background: #fdf0ec;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #777;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        ul.details {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.details li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        ul.details li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #e07a5f;
+        }
+
+        /* --- PRINT STYLES --- */
+        @media print {
+            body {
+                padding: 0;
+                background-color: #fff;
+            }
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: none;
+            }
+        }
+        
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            .profile-wrapper {
+                margin-top: 0;
+            }
+            .decor-top-left, .decor-bottom-right {
+                display: none;
+            }
+            .right-col {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <div class="decor-top-left">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 40 160 Q 10 100 60 40 Q 120 -10 180 30" fill="none" stroke="#e07a5f" stroke-width="25" stroke-linecap="round" style="opacity: 0.1;" />
+                <path d="M 55 150 Q 30 100 70 50 Q 110 10 160 40" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" style="opacity: 0.2;" />
+            </svg>
+        </div>
+
+        <div class="left-col">
+            <div class="profile-wrapper">
+                <div class="profile-circle">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Profile Photo" class="profile-img">
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="section">
+                    <h2>CONTACT</h2>
+                    <div class="contact-item">
+                        <div class="icon-circle"><i class="fas fa-phone"></i></div>
+                        <span>(+84) 9XX XXX XXX</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                        <span>emailcuaban@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-circle"><i class="fas fa-globe"></i></div>
+                        <span>www.linkedin.com/in/yourname</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                        <span>District 1, Ho Chi Minh City</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>SKILLS</h2>
+                    
+                    <div class="skill-row">
+                        <span>Office Suite</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <span>Graphic Design</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <span>Project Management</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <span>English (IELTS 7.0)</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>INTERESTS</h2>
+                    <ul class="hobby-list">
+                        <li>Photography</li>
+                        <li>Volunteering</li>
+                        <li>Traveling</li>
+                        <li>Reading</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-col">
+            <div class="decor-bottom-right">
+                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 50 250 Q 10 150 150 50 Q 250 -10 280 100" fill="none" stroke="#e07a5f" stroke-width="35" stroke-linecap="round" style="opacity: 0.1;" />
+                    <path d="M 70 240 Q 40 160 140 80" fill="none" stroke="#e07a5f" stroke-width="15" stroke-linecap="round" style="opacity: 0.15;" />
+                </svg>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="header-name">
+                    <h1>TÊN CỦA<br>BẠN Ở ĐÂY</h1>
+                    <div class="job-target">VỊ TRÍ ỨNG TUYỂN</div>
+                </div>
+
+                <div class="summary-text">
+                    <p>Briefly present 2-3 sentences about your years of experience and key responsibilities alongside relevant achievements. Recruiters want to hear how you can help them grow while maintaining your own future career goals.</p>
+                </div>
+
+                <div class="main-section">
+                    <h2>EDUCATION</h2>
+                    
+                    <div class="timeline-block">
+                        <div class="time">2018 - 2022</div>
+                        <div class="title">BACHELOR OF BUSINESS</div>
+                        <div class="subtitle">UNIVERSITY NAME</div>
+                        <ul class="details">
+                            <li>GPA: 3.8/4.0</li>
+                            <li>Outstanding Research Paper Award 2021</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="main-section">
+                    <h2>WORK EXPERIENCE</h2>
+                    
+                    <div class="timeline-block">
+                        <div class="time">2022 - PRESENT</div>
+                        <div class="title">SENIOR MARKETING EXECUTIVE</div>
+                        <div class="subtitle">GLOBAL COMPANY | HO CHI MINH CITY</div>
+                        <ul class="details">
+                            <li>Successfully managed a budget of $50,000 resulting in a 20% increase in ROI.</li>
+                            <li>Led a team of 5 people to launch the new product campaign in Q3 2023.</li>
+                            <li>Implemented new strategies that improved customer retention by 15%.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-block">
+                        <div class="time">2023 - 2024</div>
+                        <div class="title">MARKETING INTERN</div>
+                        <div class="subtitle">STARTUP INC. | REMOTE</div>
+                        <ul class="details">
+                            <li>Supported the content team in writing daily blog posts.</li>
+                            <li>Increased social media engagement by 15% in 3 months.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-block">
+                        <div class="time">2024 - 2025</div>
+                        <div class="title">TECHNOLOGY INTERN</div>
+                        <div class="subtitle">LG INC. | REMOTE</div>
+                        <ul class="details">
+                            <li>Supported the technology team in <strong>fixing bugs</strong> and system maintenance.</li>
+                            <li>Increased <strong>information accuracy</strong> by 10% through database optimization over 5 months.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

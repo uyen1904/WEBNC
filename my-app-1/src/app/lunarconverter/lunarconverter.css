@@ -1,0 +1,89 @@
+
+.converter-container {
+  max-width: 600px; 
+  margin: 50px auto; 
+  padding: 20px;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  font-family: Arial, sans-serif;
+}
+
+
+.title {
+  text-align: center;
+  color: blue;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+
+.controls-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 15px; 
+  align-items: flex-end; 
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee; 
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column; 
+}
+
+.control-item label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+
+.btn-convert {
+  padding: 6px 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #999;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-convert:hover {
+  background-color: #e0e0e0;
+}
+
+.subtitle {
+  text-align: center;
+  color: blue;
+  margin-bottom: 15px;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse; 
+  border: 1px solid #ddd;
+}
+
+.result-table td {
+  padding: 10px;
+  border: 1px solid #ddd; 
+}
+
+
+.result-table td:first-child {
+  font-weight: 500;
+  width: 40%;
+}
+
+
+.red-text {
+  color: red;
+  font-weight: bold;
+}

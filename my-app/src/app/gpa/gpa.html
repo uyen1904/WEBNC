@@ -1,0 +1,41 @@
+<p>gpa works!</p>
+<table>
+  <tbody>
+    <tr>
+      <td>Quá trình (30%):</td>
+      <td>
+        <input type="text" #qt>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Giữa kỳ (20%):</td>
+      <td>
+        <input type="text" #gk>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Cuối kỳ (50%):</td>
+      <td>
+        <input type="text" #ck>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Kết quả:</td>
+      <td #result></td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+        <button (click)="get_gpa(qt.value, gk.value, ck.value, result)">
+          Solution
+        </button>
+        <button (click)="clear_data(qt, gk, ck, result)">
+          Clear
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
