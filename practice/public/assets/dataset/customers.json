@@ -1,0 +1,42 @@
+[
+  {
+    "CustomerTypeId": 1,
+    "CustomterTypeName": "VIP",
+    "Customers": [
+      {
+        "Id": "Cus123",
+        "Name": "Taylor Swift",
+        "Email": "taylorswift@gmail.com",
+        "Age": 67,
+        "Image": "assets/images/TS.jpg"
+      },
+      {
+        "Id": "Cus456",
+        "Name": "Ji Chang Wook",
+        "Email": "jcw@gmail.com",
+        "Age": 38,
+        "Image": "assets/images/jichangwook.jpg"
+      }
+    ]
+  },
+  {
+    "CustomerTypeId": 2,
+    "CustomterTypeName": "Normal",
+    "Customers": [
+      {
+        "Id": "Cus000",
+        "Name": "Ly Yi Xiao",
+        "Email": "lyx@gmail.com",
+        "Age": 16,
+        "Image": "assets/images/luyixiao.jpg"
+      },
+      {
+        "Id": "Cus111",
+        "Name": "Khoai Lang Thang",
+        "Email": "klt@gmail.com",
+        "Age": 67,
+        "Image": "assets/images/khoailangthang.jpg"
+      }
+    ]
+  }
+]

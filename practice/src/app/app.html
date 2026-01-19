@@ -1,0 +1,44 @@
+<!-- <app-service-product-image-event></app-service-product-image-event> -->
+<!-- <div style="padding: 20px; background-color: #f5f5f5;">
+  <h1 style="color: #333;">Advanced Business Web Development</h1>
+  <h3 style="color: #666;">Vietnam National University Ho Chi Minh City</h3>
+  <h4 style="color: #999;">University of Economics and Law - Faculty of Information Systems</h4>
+  <hr> -->
+  
+  <!-- Navigation -->
+  <!-- <nav style="margin: 20px 0; padding: 10px; background-color: white; border-radius: 5px;">
+    <a routerLink="/customer-group-list" routerLinkActive="active" 
+       style="padding: 10px 15px; margin-right: 10px; text-decoration: none; color: #2196F3;">
+      Customer Groups
+    </a>
+    <a routerLink="/nested-ngfor" routerLinkActive="active"
+       style="padding: 10px 15px; margin-right: 10px; text-decoration: none; color: #2196F3;">
+      Nested NgFor
+    </a>
+    <a routerLink="/service-product-image-event" routerLinkActive="active"
+       style="padding: 10px 15px; text-decoration: none; color: #2196F3;">
+      Products
+    </a>
+  </nav>
+  
+  <router-outlet></router-outlet>
+</div> -->
+<h2>Routing Demo</h2>
+
+<table>
+  <tr>
+    <td>
+      <input type="button" value="Product" [routerLink]="'product'">
+    </td>
+    <td>
+      <input type="button" value="List-Product" [routerLink]="'list-product'">
+    </td>
+    <td>
+      <input type="button" value="Service-Product" [routerLink]="'service-product'">
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<router-outlet></router-outlet>

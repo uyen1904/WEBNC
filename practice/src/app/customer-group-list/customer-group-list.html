@@ -1,0 +1,68 @@
+<div style="padding: 20px;">
+  <h2>Customer Groups (JSON Array Model)</h2>
+  
+  <!-- Loading -->
+  <div *ngIf="loading">
+    <p>Loading customer groups...</p>
+  </div>
+  
+  <!-- Error -->
+  <div *ngIf="!loading && error">
+    <p style="color: red;">❌ Error: {{error}}</p>
+  </div>
+  
+  <!-- Empty -->
+  <div *ngIf="!loading && !error && customerGroups.length === 0">
+    <p>No customer groups found.</p>
+  </div>
+  
+  <!-- Data - ĐỪNG DÙNG *ngIf ở đây! -->
+  <div *ngFor="let group of customerGroups" style="margin-bottom: 30px;">
+    
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+      <thead style="background-color: #4CAF50; color: white;">
+        <tr>
+          <th style="padding: 10px;">Customer Type ID</th>
+          <th style="padding: 10px;">Customer Type Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px;">{{group.CustomerTypeId}}</td>
+          <td style="padding: 10px;">{{group.CustomterTypeName}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 5px;">
+      <thead style="background-color: #2196F3; color: white;">
+        <tr>
+          <th style="padding: 8px;">ID</th>
+          <th style="padding: 8px;">Name</th>
+          <th style="padding: 8px;">Email</th>
+          <th style="padding: 8px;">Age</th>
+          <th style="padding: 8px;">Image</th>
+          <th style="padding: 8px;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of group.Customers">
+          <td style="padding: 8px;">{{customer.Id}}</td>
+          <td style="padding: 8px;">{{customer.Name}}</td>
+          <td style="padding: 8px;">{{customer.Email}}</td>
+          <td style="padding: 8px;">{{customer.Age}}</td>
+          <td style="padding: 8px; text-align: center;">
+            <img [src]="customer.Image" 
+                 width="50" 
+                 height="50" 
+                 style="border-radius: 50%; object-fit: cover;" />
+          </td>
+          <td style="padding: 8px; text-align: center;">
+            <button (click)="viewDetail(customer.Id)">View Detail</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
