@@ -1,0 +1,22 @@
+<!-- login.html -->
+<div class="login-wrapper">
+  <div class="login-card">
+    <h2 class="login-title">Login</h2>
+
+    <input
+      type="text"
+      placeholder="Username"
+      [(ngModel)]="username"
+      class="login-input"
+    />
+
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+      class="login-input"
+    />
+
+    <button (click)="doLogin()" class="login-btn">Login</button>
+  </div>
+</div>

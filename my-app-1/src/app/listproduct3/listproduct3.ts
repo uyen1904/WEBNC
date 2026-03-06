@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProductHttpService } from '../product-http-service';
+import { ProductHttpService } from '../myservices/product-http-service';
+
 @Component({
   selector: 'app-listproduct3',
   standalone: false,

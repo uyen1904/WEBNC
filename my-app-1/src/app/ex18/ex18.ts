@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ex18Service } from '../ex18-service';
+import { Ex18Service } from './service/ex18-service';
 
 @Component({
   selector: 'app-ex18',

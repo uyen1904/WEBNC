@@ -36,7 +36,10 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
             ]
           },
           "configurations": {
@@ -65,6 +68,10 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": { 
+            "buildTarget": "my-app-1:build", 
+            "proxyConfig": "src/proxy.conf.json" 
+          }, 
           "configurations": {
             "production": {
               "buildTarget": "my-app-1:build:production"

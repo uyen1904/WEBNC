@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProductService } from '../productservice';
+import { ProductService } from '../myservices/productservice';
+
 @Component({
   selector: 'app-listproduct1',
   standalone: false,

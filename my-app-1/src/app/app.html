@@ -1,40 +1,78 @@
-<!-- <h1 class="title">Welcome K234112E to Angular</h1> -->
-  <!-- <app-mybinding></app-mybinding> -->
-  <!-- <app-ptb1></app-ptb1> -->
-  <!-- <app-ptb2></app-ptb2> -->
-  <!-- <app-learndirective></app-learndirective> -->
-  <!-- <h3>Product Lists 1</h3>
+<!-- <h1 class="title">Welcome K234112E to Angular</h1> 
+  <app-mybinding></app-mybinding>
+  <app-ptb1></app-ptb1>
+  <app-ptb2></app-ptb2>
+  <app-learndirective></app-learndirective>
+    <h3>Product Lists 1</h3>
   <app-listproduct1></app-listproduct1>
   <h3>Product Lists 2</h3>
-  <app-listproduct2></app-listproduct2> -->
-  <!-- <h3>Customer's product</h3>
-  <app-customer></app-customer> -->
-  <!-- <h3>Product Lists 3</h3>
-  <app-listproduct3></app-listproduct3> -->
-  <!-- <app-exercise18></app-exercise18> -->
-<!-- <div id="container">  
-<ul>
-<li> <a routerLink="/pagenotfound">HOME</a></li>
-<li> <a href="#">PRODUCTS</a>
+  <app-listproduct2></app-listproduct2> 
+   <h3>Customer's product</h3>
+  <app-customer></app-customer> 
+  <h3>Product Lists 3</h3>
+  <app-listproduct3></app-listproduct3>
+  <app-exercise18></app-exercise18> -->
+  <!-- <app-ex13product></app-ex13product> -->
+<nav *ngIf="isLoggedIn" class="navbar">
+  <div id="container">
     <ul>
-     <li> <a routerLink="/sanpham1">Product 1</a></li>
-     <li> <a routerLink="/sanpham2">Product 2</a></li>
-     <li> <a routerLink="/sanpham3">Product 3</a></li>
- </ul>
-</li>
-<li> <a href="#">CUSTOMER</a>
- <ul>
-     <li> <a routerLink="/listcustomer">Customer List</a></li>
-     <li> <a routerLink="/list-customer-service">Customer List - Service</a></li>
-     <li> <a href="#">Customer List - HTTP Service</a></li>
- </ul>
-</li>
-<li> <a href="#">HTML DOM</a></li>
-<li> <a routerLink="/about">ABOUT</a></li>
+      <li><a routerLink="/pagenotfound">HOME</a></li>
+
+      <li><a href="#">PRODUCTS</a>
+        <ul>
+          <li><a routerLink="/sanpham1">Product 1</a></li>
+          <li><a routerLink="/sanpham2">Product 2</a></li>
+          <li><a routerLink="/sanpham3">Product 3</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">FORMS</a>
+        <ul>
+          <li><a routerLink="/course-registration">Form</a></li>
+          <li><a routerLink="/relative-course-registration">Relative Form</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">CUSTOMER</a>
+        <ul>
+          <li><a routerLink="/listcustomer">Customer List</a></li>
+          <li><a routerLink="/list-customer-service">Customer List - Service</a></li>
+          <li><a href="#">Customer List - HTTP Service</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">EXTERNAL API</a>
+        <ul>
+          <li><a routerLink="/ex26">Exercise 26</a></li>
+          <li><a routerLink="/ex27">Exercise 27</a></li>
+          <li><a routerLink="/ex28">Exercise 28</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">INTERNAL API</a>
+        <ul>
+          <li><a routerLink="/ex39">Exercise 39</a></li>
+          <li><a routerLink="/ex41">Exercise 41</a></li>
+          <li><a routerLink="/ex43">Exercise 43</a></li>
+          <li><a routerLink="/ex45">Exercise 45</a></li>
+          <li><a routerLink="/ex47">Exercise 47</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">MongoDB - Rest API</a>
+        <ul>
+          <li><a routerLink="/ex53">Fashion</a></li>
+        </ul>
+      </li>
+
+      <li><a routerLink="/about">ABOUT</a></li>
+    </ul>
+
+    <button (click)="logout()">Logout</button>
+  </div>
+</nav>
 
 
-</ul>
-
-</div> -->
-<app-lunarconverter></app-lunarconverter>
-<!-- <router-outlet></router-outlet> -->
+<!-- <app-lunarconverter></app-lunarconverter> -->
+ <!-- <app-ex13product></app-ex13product> -->
+<router-outlet></router-outlet>

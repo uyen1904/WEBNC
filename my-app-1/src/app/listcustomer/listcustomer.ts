@@ -24,3 +24,4 @@ export class Listcustomer {
             this.router.navigate(["listcustomer",id])
            }
 }
+

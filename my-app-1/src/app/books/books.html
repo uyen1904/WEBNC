@@ -1,0 +1,28 @@
+{{errMessage}}
+<a routerLink="../ex43">New Book</a>
+<table border="1"> 
+    <tr> 
+        <td>BookId</td> 
+        <td>BookName</td> 
+        <td>Price</td> 
+        <td>Image</td> 
+    </tr> 
+    <tbody> 
+        <tr  *ngFor="let book of books"> 
+            <td>{{book.BookId}}</td> 
+            <td>{{book.BookName}}</td> 
+            <td>{{book.Price}} </td> 
+            <td> 
+                <img src="http://localhost:3000/yune/images/{{book.Image}}" 
+                width="50px" 
+                height="50px"
+                style="cursor:pointer"
+                (click)="view_detail(book.BookId)">
+            </td> 
+            <td>
+                <a style="cursor:pointer" (click)="show_update(book.BookId)">Edit</a> &nbsp;
+                <a style="cursor:pointer" (click)="request_delete(book.BookId)">Delete</a>
+            </td>
+        </tr> 
+    </tbody> 
+</table> 

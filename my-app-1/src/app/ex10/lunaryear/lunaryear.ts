@@ -1,4 +1,3 @@
-
 export class Lunaryear {
   day: number;
   month: number;

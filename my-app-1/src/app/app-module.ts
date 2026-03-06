@@ -1,6 +1,6 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing-module';
@@ -23,8 +23,24 @@ import { Listcustomer } from './listcustomer/listcustomer';
 import { Customerdetail } from './customerdetail/customerdetail';
 import { Customer } from './customer/customer';
 import { CommonModule } from '@angular/common';
-import { provideHttpClient } from '@angular/common/http';
-import { Lunarconverter } from './lunarconverter/lunarconverter';
+import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { Lunarconverter } from './ex10/lunarconverter/lunarconverter';
+import { Ex13product } from './ex13/ex13product/ex13product';
+import { Ex13productdetail } from './ex13/ex13productdetail/ex13productdetail';
+import { CourseRegistration } from './course-registration/course-registration';
+import { RelativeCourseRegistration } from './relative-course-registration/relative-course-registration';
+import { FakeProductComponent } from './ex26/fake-product-component/fake-product-component';
+import { FakeProductComponent1 } from './ex27/fake-product-component1/fake-product-component1';
+import { BitCoinPriceIndex } from './ex28/bit-coin-price-index/bit-coin-price-index';
+import { Books } from './books/books';
+import { BooksDetail } from './books-detail/books-detail';
+import { BooksNew } from './books-new/books-new';
+import { BooksUpdate } from './books-update/books-update';
+import { BooksDelete } from './books-delete/books-delete';
+import { Fashion } from './fashion/fashion';
+import { FashionsDetail } from './fashions-detail/fashions-detail';
+import { Login } from './login/login';
+import { LoginFailed } from './login-failed/login-failed';
 
 @NgModule({
   declarations: [
@@ -46,13 +62,31 @@ import { Lunarconverter } from './lunarconverter/lunarconverter';
     Listcustomer,
     Customerdetail,
     Lunarconverter,
+    Ex13product,
+    Ex13productdetail,
+    CourseRegistration,
+    RelativeCourseRegistration,
+    FakeProductComponent,
+    FakeProductComponent1,
+    BitCoinPriceIndex,
+    Books,
+    BooksDetail,
+    BooksNew,
+    BooksUpdate,
+    BooksDelete,
+    Fashion,
+    FashionsDetail,
+    Login,
+    LoginFailed,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

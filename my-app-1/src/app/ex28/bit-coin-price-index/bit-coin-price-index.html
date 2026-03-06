@@ -1,0 +1,41 @@
+<div class="container" *ngIf="bitcoinData">
+  <h2>{{bitcoinData.chartName}} Price</h2>
+  <p>Updated: {{bitcoinData.time.updated}}</p>
+  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Currency</th>
+        <th>Symbol</th>
+        <th>Rate</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{bitcoinData.bpi.USD.code}}</td>
+        <td>{{bitcoinData.bpi.USD.symbol}}</td>
+        <td>{{bitcoinData.bpi.USD.rate}}</td>
+        <td>{{bitcoinData.bpi.USD.description}}</td>
+      </tr>
+      <tr>
+        <td>{{bitcoinData.bpi.GBP.code}}</td>
+        <td>{{bitcoinData.bpi.GBP.symbol}}</td>
+        <td>{{bitcoinData.bpi.GBP.rate}}</td>
+        <td>{{bitcoinData.bpi.GBP.description}}</td>
+      </tr>
+      <tr>
+        <td>{{bitcoinData.bpi.EUR.code}}</td>
+        <td>{{bitcoinData.bpi.EUR.symbol}}</td>
+        <td>{{bitcoinData.bpi.EUR.rate}}</td>
+        <td>{{bitcoinData.bpi.EUR.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p><small>{{bitcoinData.disclaimer}}</small></p>
+</div>
+
+<div *ngIf="errMessage" class="alert alert-danger">
+  Error: {{errMessage}}
+</div>
