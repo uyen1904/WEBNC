@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-service-product',
-  standalone: false,
-  templateUrl: './service-product.html',
-  styleUrl: './service-product.css',
+@Injectable({
+  providedIn: 'root'  
 })
+
 export class ServiceProduct {
 
 }

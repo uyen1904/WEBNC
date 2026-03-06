@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Productservice } from '../productservice/productservice';
 
@@ -8,6 +8,7 @@ import { Productservice } from '../productservice/productservice';
   templateUrl: './service-product-image-event-detail.html',
   styleUrl: './service-product-image-event-detail.css',
 })
+
 export class ServiceProductImageEventDetail {
    selectedProduct:any 
   constructor(private activateRoute:ActivatedRoute,private _fs:Productservice, 

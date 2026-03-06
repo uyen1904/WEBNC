@@ -3,12 +3,6 @@ import { Component, Injectable } from '@angular/core';
   providedIn: 'root'  
 })
 
-@Component({
-  selector: 'app-productservice',
-  standalone: false,
-  templateUrl: './productservice.html',
-  styleUrl: './productservice.css',
-})
 export class Productservice {
   productsImage=[ 
 {"ProductId":"p1","ProductName":"Coca","Price":100,"Image":"assets/images/coca.png"}, 
